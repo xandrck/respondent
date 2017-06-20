@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -7,23 +9,26 @@ end
 
 ruby '2.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
-# gem 'sqlite3'                                 # Use sqlite3 as the database for Active Record
-gem 'puma', '~> 3.7'                          # Use Puma as the app server
-gem 'sass-rails', '~> 5.0'                    # Use SCSS for stylesheets
-# gem 'therubyracer', platforms: :ruby          # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'turbolinks', '~> 5'                      # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'jbuilder', '~> 2.5'                      # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'redis', '~> 3.0'                         # Use Redis adapter to run Action Cable in production
-# gem 'bcrypt', '~> 3.1.7'                      # Use ActiveModel has_secure_password
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]    # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'haml', '~> 5.0.1'                        # HtmlAbstractionMarkupLanguage - Templating Syntactic Sugar
-gem 'pg', '~> 0.21.0'                         # PostgreSQL
-gem 'annotate'                                # Add a comment summarizing the current schema (models, fixture, tests, routes, etc.)
+gem 'rails', '~> 5.1.1'         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# gem 'sqlite3'                   # Use sqlite3 as the database for Active Record
+gem 'puma', '~> 3.7'            # Use Puma as the app server
+gem 'sass-rails', '~> 5.0'      # Use SCSS for stylesheets
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+gem 'jbuilder', '~> 2.5'          # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# gem 'redis', '~> 3.0'           # Use Redis adapter to run Action Cable in production
+# gem 'bcrypt', '~> 3.1.7'        # Use ActiveModel has_secure_password
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'haml', '~> 5.0.1'          # HtmlAbstractionMarkupLanguage - Templating Syntactic Sugar
+gem 'pg', '~> 0.21.0'           # PostgreSQL
+gem 'annotate'                  # Add a comment summarizing the current schema (models, fixture, tests, routes, etc.)
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :assets do
@@ -32,9 +37,12 @@ group :assets do
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'               # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'                                # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
+  gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # gem 'capistrano-rails'                      # Use Capistrano for deployment
   gem 'rubocop', require: false
