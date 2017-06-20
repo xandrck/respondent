@@ -2,6 +2,7 @@
 # in separate files. This file adds all other parameters apart from Enabled.
 
 inherit_from:
+  - .rubocop_todo.yml
   - config/rubocop/enabled.yml
   - config/rubocop/disabled.yml
 
@@ -1326,7 +1327,10 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 Metrics/LineLength:
-  Max: 80
+  Description: 'Limit lines to 150 characters.'
+  StyleGuide: '#80-character-limits'
+  Enabled: true
+  Max: 120
   # To make it possible to copy or click on URIs in the code, we allow lines
   # containing a URI to be longer than Max.
   AllowHeredoc: true
